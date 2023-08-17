@@ -1,0 +1,40 @@
+//Write a program to count the number of days in a given month of a year in C
+#include<stdio.h>
+int main()
+{
+    int month = 12, year=2012;
+    
+    switch (month) {
+    // Cases for 31 Days
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        printf("Number of days is 31 Days.");
+        break;
+  
+    // Cases for 30 Days
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        printf("Number of days is 30 Days.");
+        break;
+  
+    // Case for 28/29 Days
+    case 2:
+        if((year%400==0) || ((year%100!=0)&&(year%4==0)))
+        printf("Number of days is 29");
+        else printf("Number of days is 28");
+        break;
+  
+    default:
+        printf("Invalid Month.");
+        break;
+    }
+    
+    return 0;
+}
